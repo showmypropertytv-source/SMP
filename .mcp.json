@@ -4,10 +4,10 @@
       "command": "uvx",
       "args": ["timedoctor-mcp"],
       "env": {
-        "TD_EMAIL": "your-email@example.com",
-        "TD_PASSWORD": "your-password",
-        "TD_BASE_URL": "https://2.timedoctor.com",
-        "HEADLESS": "true"
+        "TD_EMAIL": "${TD_EMAIL}",
+        "TD_PASSWORD": "${TD_PASSWORD}",
+        "TD_BASE_URL": "${TD_BASE_URL:-https://2.timedoctor.com}",
+        "HEADLESS": "${HEADLESS:-true}"
       }
     }
   }

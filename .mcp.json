@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "timedoctor": {
+      "command": "uvx",
+      "args": ["timedoctor-mcp"],
+      "env": {
+        "TD_EMAIL": "your-email@example.com",
+        "TD_PASSWORD": "your-password",
+        "TD_BASE_URL": "https://2.timedoctor.com",
+        "HEADLESS": "true"
+      }
+    }
+  }
+}

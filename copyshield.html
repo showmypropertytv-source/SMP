@@ -779,6 +779,26 @@
 
   /* ---------- Mock data ---------- */
   var DB = {
+    custom: {
+      match: 58,
+      labels: ["Custom asset", "User upload", "Unique artwork"],
+      preview: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)",
+      fairUse: false,
+      phash: { flag: false, text: "pHash distance <span class='mono'>31/64</span> — no direct copy. Passing to semantic tier." },
+      diag1: "Semantic analysis in progress against registry vectors. No strong matches detected.",
+      diag2: "Reverse search found <span class='mono'>0</span> direct matches. <span class='mono'>2</span> structurally similar designs online with low confidence.",
+      diag3: "No transformative elements detected. Standard risk weighting applied.",
+      alts: {
+        subject: [
+          { title: "Similar Design A", provider: "Unsplash", lic: "commercial", licLabel: "Free commercial", grad: "linear-gradient(135deg, #0891b2 0%, #0369a1 100%)" },
+          { title: "Similar Design B", provider: "Pexels", lic: "cc0", licLabel: "CC0", grad: "linear-gradient(135deg, #6366f1 0%, #3b82f6 100%)" }
+        ],
+        aesthetic: [
+          { title: "Aesthetic Match 1", provider: "Pixabay", lic: "commercial", licLabel: "Free commercial", grad: "linear-gradient(135deg, #ec4899 0%, #f97316 100%)" },
+          { title: "Aesthetic Match 2", provider: "Unsplash", lic: "ccby", licLabel: "CC-BY", grad: "linear-gradient(135deg, #84cc16 0%, #22c55e 100%)" }
+        ]
+      }
+    },
     cyberpunk: {
       match: 91,
       labels: ["Cyberpunk city", "Neon street", "Sci-fi metropolis"],
@@ -870,9 +890,8 @@
       $("dz-clear").style.display = "grid";
       $("dz-tag").style.display = "flex";
       $("dz-tag-name").textContent = file.name.length > 22 ? file.name.slice(0, 20) + "…" : file.name;
-      // Real upload, simulated routing to a mock analysis profile
-      var keys = ["cyberpunk", "character"];
-      loadScenario(keys[Math.floor(Math.random() * keys.length)], false);
+      // Analyze the uploaded image through the custom scenario
+      loadScenario("custom", false);
     };
     reader.readAsDataURL(file);
   }

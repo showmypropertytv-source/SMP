@@ -1,5 +1,12 @@
 {
   "mcpServers": {
+    "sked": {
+      "type": "http",
+      "url": "https://app-mcp.skedsocial.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ${SKED_MCP_TOKEN}"
+      }
+    },
     "timedoctor": {
       "command": "uvx",
       "args": ["timedoctor-mcp"],

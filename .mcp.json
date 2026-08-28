@@ -1,11 +1,14 @@
 {
   "mcpServers": {
     "sked": {
-      "type": "http",
-      "url": "https://app-mcp.skedsocial.com/mcp",
-      "headers": {
-        "Authorization": "Bearer ${SKED_MCP_TOKEN}"
-      }
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://app-mcp.skedsocial.com/mcp",
+        "--header",
+        "Authorization: Bearer ${SKED_MCP_TOKEN}"
+      ]
     },
     "timedoctor": {
       "command": "uvx",

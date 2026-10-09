@@ -1,8 +1,23 @@
 {
   "mcpServers": {
+    "sked": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://app-mcp.skedsocial.com/mcp",
+        "--header",
+        "Authorization:${SKED_AUTH_HEADER}"
+      ],
+      "env": {
+        "SKED_AUTH_HEADER": "Bearer ${SKED_MCP_TOKEN}"
+      }
+    },
     "timedoctor": {
       "command": "uvx",
-      "args": ["timedoctor-mcp"],
+      "args": [
+        "timedoctor-mcp"
+      ],
       "env": {
         "TD_EMAIL": "${TD_EMAIL}",
         "TD_PASSWORD": "${TD_PASSWORD}",

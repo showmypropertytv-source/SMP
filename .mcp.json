@@ -1,6 +1,6 @@
 {
   "mcpServers": {
-    "sked": {
+    "sked-client": {
       "command": "npx",
       "args": [
         "-y",

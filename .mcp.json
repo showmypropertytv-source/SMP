@@ -1,8 +1,21 @@
 {
   "mcpServers": {
+    "sked-client": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://app-mcp.skedsocial.com/mcp"
+      ],
+      "env": {
+        "NODE_USE_ENV_PROXY": "1"
+      }
+    },
     "timedoctor": {
       "command": "uvx",
-      "args": ["timedoctor-mcp"],
+      "args": [
+        "timedoctor-mcp"
+      ],
       "env": {
         "TD_EMAIL": "${TD_EMAIL}",
         "TD_PASSWORD": "${TD_PASSWORD}",

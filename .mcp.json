@@ -9,6 +9,16 @@
         "TD_BASE_URL": "${TD_BASE_URL:-https://2.timedoctor.com}",
         "HEADLESS": "${HEADLESS:-true}"
       }
+    },
+    "sked-client": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://app-mcp.skedsocial.com/mcp",
+        "--header",
+        "Authorization: Bearer ${SKED_BEARER_TOKEN}"
+      ]
     }
   }
 }
